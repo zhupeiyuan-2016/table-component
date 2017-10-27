@@ -40,22 +40,20 @@
         };  
     }  
     
-//ajax({  
-//  method: 'GET',  
-//  url: 'base/base.json',  
-//  success: function (response) {  
-//     console.log(response); 
-//  }  
-//});  
-//ajax({  
-//  method: 'POST',  
-//  url: 'test.php',  
-//  data: {  
-//      name1: 'value1',  
-//      name2: 'value2'  
-//  },  
-//  success: function (response) {  
-//     console.log(response)  
-//  }  
-//});
+function state(data) {
+		switch(data){
+			case 200:
+				return true;
+				break;
+			case -1:
+				return false;
+				break;
+			case 201:
+				return false;
+				break;
+			case 101:
+				return false;
+				break;
 
+		}
+	}

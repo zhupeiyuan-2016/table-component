@@ -1,24 +1,16 @@
 {
 	"input":{
-		"url":"http://localhost:3000/personalized/djprogram",
+		"url":"input.json",
 		"method":"get"
 	},
 	"operation":{
-		"delete": true	
+		"delete": true,
+		"number": true	
 	},
 	"show":{
-		"toolbar": "b",                
-		"striped": true,                      
-		"pagination": true,                  
-		"sortable": false,                     
-		"sortOrder": "asc",                   
-		"pageSize": 10,                     
-		"search": true                                        
+		"toolbar": "b"                                       
 	},
-	"columns": [ {
-                "class": "number",
-                "title": "序号"
-            }, {
+	"columns": [{
                "class": "name",
                 "title": "姓名"
             }, {
@@ -26,13 +18,10 @@
                 "title": "性别"
             },  {
                "class": "",
-                "title": "部门"
+                "title": "身高"
             },{
                 "class": "date",
                 "title": "入社时间"
-            },{
-            		"class": "operation",
-                "title": "操作"
-            } 
+            }
             ]
 }

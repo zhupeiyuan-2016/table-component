@@ -10,9 +10,11 @@ function init(url){
 }
 function Table(data){ 
 	this.data = JSON.parse(data);
-	this.init();
+	this.th();
+	this.content();
+	this.operation();
 }
-Table.prototype.init = function(){
+Table.prototype.th = function(){
 	const toolbar = document.getElementById(this.data.show.toolbar);
 	var table = document.createElement('table');
 	table.innerHTML = "<tr></tr>"
@@ -22,9 +24,29 @@ Table.prototype.init = function(){
 		var th = document.createElement("th");
 		th.innerHTML = this.data.columns[i].title;
 		th.setAttribute("class",this.data.columns[i].class);
-		tr.appendChild(th)
-		console.log(this.data.columns[i].class)
+		tr.appendChild(th);
 	}
-	
+	if(this.data.operation){
+		console.log("no")
+		var th = document.createElement("th");
+		th.innerHTML = "操作";
+		tr.appendChild(th)
+	}
+}
+Table.prototype.content = function(){
+	ajax({
+		method: this.data.input.method,
+		url: this.data.input.url,
+		success: function(respons){
+			if(state(respons.code)){
+				console.log("no");
+			}else{
+				
+			}
+		}
+	})
+}
+Table.prototype.operation = function(){
+	console.log("operation");
 }
 
