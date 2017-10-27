@@ -7,7 +7,7 @@
 		"delete": true	
 	},
 	"show":{
-		"toolbar": "b",                
+		"toolbar": "c",                
 		"striped": true,                      
 		"pagination": true,                  
 		"sortable": false,                     
