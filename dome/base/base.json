@@ -1,0 +1,24 @@
+{
+	"input":{
+		"url":"input.json",
+		"method":"get"
+	},
+	"operation":{
+		"switch":false,
+		"delete": true
+	},
+	"show":{
+		"toolbar": "b"                                       
+	},
+	"columns": [{
+               "class": "name",
+                "title": "姓名"
+            }, {
+               "class": "sex",
+                "title": "性别"
+            },  {
+               "class": "",
+                "title": "身高"
+            }
+            ]
+}

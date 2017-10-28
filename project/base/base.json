@@ -4,6 +4,7 @@
 		"method":"get"
 	},
 	"operation":{
+		"switch": false,
 		"delete": true
 	},
 	"show":{

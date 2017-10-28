@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.table-content table{
+	max-width: 800px;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 0px;
+	letter-spacing: 2px;
+}
+.table-content tr{
+	max-width: 100px;
+	height: 45px;
+}
+.table-content th{
+	max-height: 80px;
+	margin: 20px;
+	padding: 25px;
+	background-color: #f8f8f9;
+	border-bottom: 1px solid #e9eaec;
+}
+.table-content td{
+	max-width: 500px;
+	max-height: 50px;
+	border-right: 1px solid #e9eaec;
+	border-bottom: 1px solid #e9eaec;
+}
+.table-content tr:hover {
+	background-color: #f6f5ec;
+}
+.table-content button{
+	margin-right: 5px;
+	margin-left: 5px;
+	width: 60px;
+	height: 30px;
+	background-color:#65c294;
+	border-radius: 3px;
+}
+.table-content span{
+	letter-spacing: 1px;
+	color: black;
+}
+.table-content input{
+    width: 100px;
+    height: 20px;
+    line-height: 1.5;
+    padding: 4px 7px;
+    border: 1px solid #dddee1;
+    border-radius: 4px;
+    color: #495060;
+}
+.table-content i{
+	visibility: hidden;
+	font-size: 20px;
+}
+.table-content td:hover i{
+	visibility: visible;
+}
+.table-content .icon-xuanzhong{
+	font-size: 2px;
+}
