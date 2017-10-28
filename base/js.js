@@ -20,6 +20,9 @@ Table.prototype.th = function(){
 	table.innerHTML = "<tr></tr>"
 	toolbar.appendChild(table);
 	var tr = toolbar.querySelector("tr");
+	var th = document.createElement("th");
+	th.innerHTML = "序号";
+	tr.appendChild(th);
 	for (var i = 0 ; i < this.data.columns.length-1 ; i++ ){
 		var th = document.createElement("th");
 		th.innerHTML = this.data.columns[i].title;
@@ -27,26 +30,45 @@ Table.prototype.th = function(){
 		tr.appendChild(th);
 	}
 	if(this.data.operation){
-		console.log("no")
 		var th = document.createElement("th");
+		th.setAttribute("class","operation")
 		th.innerHTML = "操作";
 		tr.appendChild(th)
 	}
 }
+
 Table.prototype.content = function(){
+	const toolbar = document.getElementById(this.data.show.toolbar);
 	ajax({
 		method: this.data.input.method,
 		url: this.data.input.url,
 		success: function(respons){
-			if(state(respons.code)){
-				console.log("no");
+			var data = JSON.parse(respons)
+			console.log(JSON.parse(respons))
+			if(!state(data.code)){
+				console.log("数据错误");	
 			}else{
-				
+				for (var i = 0 ; i < data.msg.length ; i++) {
+					var tr = toolbar.querySelectorAll("tr");
+					var newtr = document.createElement("tr");
+					newtr.setAttribute("id","new")
+					var str = '<td>'+i+'</td>';
+					for (var j in data.msg[i]) {
+						str += '<td>'+data.msg[i][j]+'</td>'
+					}
+					newtr.innerHTML = str;
+					tr[tr.length-1].parentNode.appendChild(newtr);
+					str = ""
+				}
 			}
 		}
 	})
+	
 }
 Table.prototype.operation = function(){
-	console.log("operation");
+	const toolbar = document.getElementById(this.data.show.toolbar);
+	if(this.data.operation.delete){
+		console.log(toolbar)
+	}
 }
 
